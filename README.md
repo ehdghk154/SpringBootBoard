@@ -1,2 +1,2 @@
 # SpringBootBoard
-SringBoot로 게시판 제작
+SpringBoot로 게시판 제작
