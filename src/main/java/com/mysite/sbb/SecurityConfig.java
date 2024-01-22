@@ -23,7 +23,6 @@ import lombok.RequiredArgsConstructor;
 @EnableGlobalMethodSecurity(prePostEnabled = true) // 질문|답변컨트롤러에서 로그인 여부 판별을 위한 @PreAuthorize 를 사용하기 위해 반드시 필요
 public class SecurityConfig {
     
-    private final UserSecurityService userSecurityService;
     /* @Bean
      * 1.개발자가 직접 제어가 불가능한 라이브러리를 활용할 때
        2.애플리케이션 전범위적으로 사용되는 클래스를 등록할 때

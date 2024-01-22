@@ -35,7 +35,7 @@ public class UserController {
             return "signup_form";
         }
         try {
-        userService.create(userCreateForm.getUsername(), 
+        	userService.create(userCreateForm.getUsername(), 
                 userCreateForm.getEmail(), userCreateForm.getPassword1());
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();

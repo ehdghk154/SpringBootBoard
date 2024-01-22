@@ -4,27 +4,26 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.mysite.sbb.answer.AnswerService;
-import com.mysite.sbb.question.Question;
 import com.mysite.sbb.question.QuestionService;
 import com.mysite.sbb.user.SiteUser;
 import com.mysite.sbb.user.UserService;
 
 @SpringBootTest
-class SbbApplicationTests {
+class SbbquestionTests {
     
     @Autowired
-    private AnswerService answerService;
     private QuestionService questionService;
+    @Autowired
     private UserService userService;
     
 	@Test
 	void testJpa() {
-	    Question q = this.questionService.getQuestion(2);
-	    SiteUser u = userService.getUser("ehdghk154");
+		SiteUser user = userService.getUser("test1");
+		
 	    for(int i = 1; i <= 20; i++) {
-	        String content = String.format("답변페이징테스트[:%d]", i);
-	        this.answerService.create(q, content, u);
+	    	String title = String.format("질문테스트[:%d]", i);
+	        String content = String.format("질문내용[:%d]", i);
+	        this.questionService.create(title, content, user);
 	    }
 	}
 
