@@ -10,8 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+//import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
+
 
 import com.mysite.sbb.user.UserSecurityService;
 
@@ -31,13 +32,9 @@ public class SecurityConfig {
     // @Component : 개발자가 직접 작성한 클래스를 Bean으로 등록할 때 사용
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/**").permitAll()
-            .and()
-                .csrf().ignoringAntMatchers("/h2-console/**")
-            .and()
-                .headers()
-                .addHeaderWriter(new XFrameOptionsHeaderWriter(
-                        XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))
+        http
+	        .authorizeRequests()
+	        .antMatchers("/**").permitAll()
             .and()
                 .formLogin()
                 .loginPage("/user/login")
