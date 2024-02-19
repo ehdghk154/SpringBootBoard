@@ -48,4 +48,7 @@ url을 연결할 때 코드 오류로 열리지 않는 등 중간중간 걸리�
 + 댓글 작성 (댓글 별 추천, (작성자 본인)수정 및 삭제)
 <img src="https://github.com/ehdghk154/SpringBootBoard/assets/50476562/a65d694c-8c30-4f74-a579-511f5ff946ac"/>
 
++ 게시글 검색
+<img src="https://github.com/ehdghk154/SpringBootBoard/assets/50476562/d4d89e8e-b28c-45a0-9e3b-80c820ccc7e6"/>
+
 ---
